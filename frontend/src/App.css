@@ -1,0 +1,480 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+  --primary-color: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-light: #eff6ff;
+  --success-color: #059669;
+  --danger-color: #dc2626;
+  --warning-color: #d97706;
+  --neutral-color: #6b7280;
+  
+  --background: #ffffff;
+  --surface: #f9fafb;
+  --surface-2: #f3f4f6;
+  --surface-3: #e5e7eb;
+  
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-muted: #9ca3af;
+  
+  --border: #e5e7eb;
+  --border-light: #f3f4f6;
+  
+  --radius: 6px;
+  --radius-lg: 8px;
+  
+  --font-mono: 'Space Mono', monospace;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  font-family: var(--font-mono);
+  background: var(--background);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
+  min-height: 100vh;
+  background: var(--background);
+}
+
+/* Utility Classes */
+.positive {
+  color: var(--success-color);
+  font-weight: var(--font-weight-bold);
+}
+
+.negative {
+  color: var(--danger-color);
+  font-weight: var(--font-weight-bold);
+}
+
+.neutral {
+  color: var(--neutral-color);
+}
+
+/* Card Components */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  transition: all 0.15s ease;
+}
+
+.card:hover {
+  border-color: var(--primary-color);
+}
+
+.card-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--background);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.125rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+}
+
+.card-subtitle {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-top: 0.25rem;
+  font-family: var(--font-mono);
+}
+
+/* Button Components */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-mono);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-decoration: none;
+  background: var(--background);
+  color: var(--text-primary);
+}
+
+.btn:hover {
+  border-color: var(--primary-color);
+  background: var(--primary-light);
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+.btn-secondary {
+  background: var(--surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  background: var(--surface-2);
+  border-color: var(--primary-color);
+}
+
+.btn.active {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+/* Volume Comparison Chart Styles */
+.volume-comparison-chart {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.volume-comparison-chart .chart-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--background);
+}
+
+.volume-comparison-chart .chart-title {
+  font-size: 1.125rem;
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-mono);
+  color: var(--text-primary);
+  margin: 0 0 1rem 0;
+}
+
+.volume-comparison-chart .coin-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.volume-comparison-chart .coin-image {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+}
+
+.volume-comparison-chart .coin-details h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-mono);
+  color: var(--text-primary);
+}
+
+.volume-comparison-chart .coin-details p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+}
+
+.volume-comparison-chart .chart-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.volume-comparison-chart .chart-container {
+  padding: 1.5rem;
+  background: var(--background);
+}
+
+.volume-comparison-chart .volume-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+.volume-comparison-chart .stat-item {
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  transition: all 0.15s ease;
+}
+
+.volume-comparison-chart .stat-item:hover {
+  border-color: var(--primary-color);
+}
+
+.volume-comparison-chart .stat-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  font-weight: var(--font-weight-normal);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+}
+
+.volume-comparison-chart .stat-value {
+  font-size: 1rem;
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-mono);
+  color: var(--text-primary);
+  display: block;
+}
+
+/* Search Input Styles */
+.coin-search-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-family: var(--font-mono);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--background);
+  color: var(--text-primary);
+  outline: none;
+  transition: all 0.15s ease;
+}
+
+.search-input:focus {
+  border-color: var(--primary-color);
+  background: var(--primary-light);
+}
+
+.search-results {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  right: 0;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  z-index: 1000;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.search-result-item {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.15s ease;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+}
+
+.search-result-item:hover {
+  background: var(--surface);
+  border-color: var(--primary-color);
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.search-result-item img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+}
+
+/* Loading States */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  text-align: center;
+}
+
+.loading-container .spinner {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid var(--border);
+  border-top: 2px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-container p {
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+/* Error States */
+.error-container {
+  background: var(--surface);
+  border: 1px solid var(--danger-color);
+  color: var(--danger-color);
+  padding: 1rem;
+  border-radius: var(--radius);
+  margin: 1rem 0;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+}
+
+/* Table Styles */
+.market-overview table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+}
+
+.market-overview thead {
+  background: var(--surface-2);
+}
+
+.market-overview th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.market-overview td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-light);
+  font-weight: var(--font-weight-normal);
+}
+
+.market-overview tbody tr:hover {
+  background: var(--primary-light);
+}
+
+/* Dashboard Styles */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+.dashboard-title {
+  font-size: 2rem;
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-mono);
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  margin-bottom: 2rem;
+}
+
+.dashboard-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 1rem;
+  }
+  
+  .dashboard-header {
+    padding: 1.5rem;
+  }
+  
+  .dashboard-title {
+    font-size: 1.5rem;
+  }
+  
+  .volume-comparison-chart .volume-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .coin-search-container {
+    max-width: none;
+  }
+  
+  .market-overview th,
+  .market-overview td {
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-header {
+    padding: 1rem;
+  }
+  
+  .dashboard-title {
+    font-size: 1.25rem;
+  }
+  
+  .volume-comparison-chart .stat-item {
+    padding: 0.75rem;
+  }
+}

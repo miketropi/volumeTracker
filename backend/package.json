@@ -1,0 +1,36 @@
+{
+  "name": "crypto-volume-tracker-backend",
+  "version": "1.0.0",
+  "description": "Backend API for crypto volume comparison tracker",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "helmet": "^7.0.0",
+    "dotenv": "^16.3.1",
+    "axios": "^1.4.0",
+    "redis": "^4.6.7",
+    "express-rate-limit": "^6.8.1",
+    "compression": "^1.7.4",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "jest": "^29.6.1",
+    "supertest": "^6.3.3"
+  },
+  "keywords": [
+    "crypto",
+    "volume",
+    "tracker",
+    "coingecko",
+    "api"
+  ],
+  "author": "Crypto Volume Tracker",
+  "license": "MIT"
+}
