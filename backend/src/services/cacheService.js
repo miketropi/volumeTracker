@@ -122,7 +122,7 @@ class CacheService {
   }
 
   isHealthy() {
-    return this.isConnected && this.client;
+    return this.isConnected && !!this.client;
   }
 }
 
